@@ -63,8 +63,8 @@ var draw = function() {
 function Ball(xPos, yPos) {
   this.xPos = xPos;
   this.yPos = yPos;
-  this.xVel = 1;
-  this.yVel = 1;
+  this.xVel = 3;
+  this.yVel = 6;
   this.radius = ballRadius
 };
 
@@ -78,6 +78,16 @@ Ball.prototype.draw = function () {
 Ball.prototype.update =function() {
   this.xPos += this.xVel;
   this.yPos += this.yVel;
+  if (this.xPos + this.radius>= width) {
+    this.xVel *= -1;
+  } else if (this.xPos - this.radius<= 0) {
+    this.xVel *= -1;
+  }
+  if (this.yPos + this.radius>= height) {
+    this.yVel *= -1;
+  } else if (this.yPos - this.radius<= 0) {
+    this.yVel *= -1;
+  }
 }
 
 function Paddle(xPos, yPos, width, height) {
