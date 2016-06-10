@@ -1,4 +1,8 @@
 var pingPong = function(number) {
+  var result = [];
+  for(count = 1; count <= number; count ++) {
+    result.push(count);
+  };
 
   return result;
 };
