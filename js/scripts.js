@@ -3,6 +3,8 @@ var pingPong = function(number) {
   for(count = 1; count <= number; count ++) {
     if (count % 3 === 0){
       result.push("ping");
+    } else if (count % 5 === 0) {
+      result.push("pong");
     } else {
       result.push(count);
     }
