@@ -12,6 +12,14 @@ _This will take a number as an input and then count up to that number from 1 rep
 
 * _Clone the repository_
 
+## BDD specs used
+
+* _it can count up to the provided number: 2 - [1,2]_
+* _it replaces numbers divisible by 3 with ping: 3 - [1,2,'ping']_
+* _it replaces numbers divisible by 5 with pong: 5 - [1,2,'ping',4,'pong']_
+* _if a number is divisible by both 3 and 5 it outputs pingpong: 15 [1,2,'ping',4,'pong','ping',7,8,'ping','pong',11,'ping',13,14,'pingpong']_
+* _if you input a negative number, it will count down to it: -5 - [-1,-2,'ping',-4,'pong']_
+* _non-number inputs: Bob - error message before submission_
 
 ## Known Bugs
 
