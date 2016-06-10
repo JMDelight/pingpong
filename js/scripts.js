@@ -1,5 +1,8 @@
+var pingCounter = 0;
+var pongCounter = 0;
+
 var pingPong = function(number) {
-  var result = [];
+  var results = [];
   var count = 0;
   var countingNumber = 1;
   if (number >= 1 ) {
@@ -10,17 +13,20 @@ var pingPong = function(number) {
   while (count != number) {
     count += countingNumber;
     if (count % 15 === 0) {
-      result.push("pingpong");
+      results.push("pingpong");
+      pingCounter += 1;
+      pongCounter += 1;
     } else if (count % 3 === 0){
-      result.push("ping");
+      results.push("ping");
+      pingCounter += 1;
     } else if (count % 5 === 0) {
-      result.push("pong");
+      results.push("pong");
+      pongCounter += 1;
     } else {
-      result.push(count);
+      results.push(count);
     }
   };
-
-  return result;
+  return results;
 };
 
 $(document).ready(function() {
@@ -28,6 +34,11 @@ $(document).ready(function() {
     event.preventDefault();
     var userInput = parseInt($("#user-input").val());
     var output = pingPong(userInput);
-    $("#result").text(output);
+    $("#result").empty();
+    $("#ping").text(pingCounter);
+    $("#pong").text(pongCounter);
+    output.forEach(function(item) {
+      $("#result").append("<li>" + item + "</li>");
+    });
   });
 });

@@ -15,7 +15,7 @@ _This will take a number as an input and then count up to that number from 1 rep
 
 * _Clone the repository_
 
-## BDD specs used
+## BDD specs used for ping pong counter
 
 * _it can count up to the provided number: 2 - [1,2]_
 * _it replaces numbers divisible by 3 with ping: 3 - [1,2,'ping']_
@@ -23,6 +23,20 @@ _This will take a number as an input and then count up to that number from 1 rep
 * _if a number is divisible by both 3 and 5 it outputs pingpong: 15 [1,2,'ping',4,'pong','ping',7,8,'ping','pong',11,'ping',13,14,'pingpong']_
 * _if you input a negative number, it will count down to it: -5 - [-1,-2,'ping',-4,'pong']_
 * _non-number inputs: Bob - error message before submission_
+
+
+## Programming steps for Pong
+
+* _Draw a canvas_
+* _Draw a ball_
+* _Draw the paddles_
+* _Move the Ball_
+* _Reflect te ball off of edge of canvas_
+* _Capture key press to move paddles_
+* _Ball respwans in middle if it touches the sides with paddles_
+* _Ball reflects off of paddles_
+* _Implement a score counter_
+* _Implement a computer AI that tracks the paddle to the ball position_
 
 ## Known Bugs
 

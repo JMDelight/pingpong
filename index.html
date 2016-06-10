@@ -10,14 +10,27 @@
     <title>Ping Pong Counter</title>
   </head>
   <body>
-    <form class="form-inline ping-form">
-      <div class="form-group">
-        <label for="user-input">Enter a number</label>
-        <input type="number" required="true" class="form-control" id="user-input">
-      </div>
-      <button type="submit" class="btn btn-default" id="submit">Ping</button>
-    </form>
-    <div class = "jumbotron" id="result">
+    <div class="jumbotron">
+      <p>Ping Pong will count to your number, starting at 1, with the following exceptions:</p>
+      <ol>
+        <li>numbers divisible by 3 become "ping"</li>
+        <li>numbers divisible by 5 become "pong"</li>
+        <li>numbers divisible by 15 become "pingpong"</li>
+      </ol>
+      <h4>Total number of Pings: <span id="ping">0</span></h4>
+      <h4>Total number of Pongs: <span id="pong">0</span></h4>
+
+      <form class="form-inline ping-form">
+        <div class="form-group">
+          <label for="user-input">Enter a number</label>
+          <input type="number" required="true" class="form-control" id="user-input">
+        </div>
+        <button type="submit" class="btn btn-default" id="submit">Ping</button>
+      </form>
+    </div>
+    <div class="jumbotron">
+      <ul id="result">
+      </ul>
     </div>
   </body>
 </html>
