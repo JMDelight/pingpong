@@ -40,5 +40,9 @@ $(document).ready(function() {
     output.forEach(function(item) {
       $("#result").append("<li>" + item + "</li>");
     });
+    if (pingCounter === 15 && pongCounter === 15) {
+      alert("You found the secret Pong game(under construction)");
+      window.location.href = 'pong.html';
+    }
   });
 });

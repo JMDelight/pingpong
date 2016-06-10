@@ -1,23 +1,3 @@
-// var animate = window.requestAnimationFrame ||
-//   window.webkitRequestAnimationFrame ||
-//   window.mozRequestAnimationFrame ||
-//   function(callback) { window.setTimeout(callback, 1000/60) };
-//
-//
-// var canvas = document.getElementById("#canvas");
-// var width = 600;
-// var height = 400;
-// var ctx = canvas.getContext("2d");
-// var paintCanvas = function() {
-//   ctx.fillStyle = "black";
-//   ctx.fillrect(0, 0, width, height);
-// };
-//
-//
-// paintCanvas();
-
-
-
 var animate = window.requestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -37,8 +17,6 @@ var ball = new Ball(250, 250);
 var paddleOne = new Paddle(0, height/3, paddleWidth, paddleHeight);
 var paddleTwo = new Paddle(width - paddleWidth, height/3,paddleWidth, paddleHeight);
 
-
-
 var step = function() {
   update();
   draw();
@@ -47,7 +25,6 @@ var step = function() {
 
 var update = function() {
   ball.update();
-
 };
 
 var draw = function() {
@@ -55,6 +32,7 @@ var draw = function() {
   context.fillRect(0, 0, width, height);
   context.strokeStyle = "#fff";
   context.strokeRect(width/2, 0, 1, height);
+  context.strokeRect(paddleWidth, 0, width - 2 * paddleWidth, height);
   paddleOne.draw();
   paddleTwo.draw();
   ball.draw();
@@ -65,12 +43,13 @@ function Ball(xPos, yPos) {
   this.yPos = yPos;
   this.xVel = 3;
   this.yVel = 6;
-  this.radius = ballRadius
+  this.radius = ballRadius;
 };
+
 
 Ball.prototype.draw = function () {
   context.beginPath();
-  context.arc(this.xPos, this.yPos, this.radius, 2 * Math.PI, false)
+  context.arc(this.xPos, this.yPos, this.radius, 2 * Math.PI, false);
   context.fillStyle = "#fff";
   context.fill();
 };
@@ -104,7 +83,34 @@ Paddle.prototype.draw = function () {
   context.fillRect(this.xPos, this.yPos, this.width, this.height);
 };
 
+Paddle.prototype.update = function () {
+  this.xPos += this.xVel;
+  this.yPos += this.yVel;
+};
+
+// PlayerOne.controls = function() {
+//   for (var key in keysDown) {
+//     var value = Number(key);
+//     if (value == 37) {
+//         this.paddle.yVel = -5;
+//     } else if (value == 39) {
+//         this.paddle.yVel = 5;
+//     } else {
+//         this.paddle.yVel = 0;
+//     }
+//   };
+// };
+
 window.onload = function() {
   document.body.appendChild(canvas);
   animate(step);
 };
+
+window.addEventListener("keydown", function(event) {
+  keysDown[event.keyCode] = true;
+  console.log(keysDown);
+});
+
+window.addEventListener("keyup", function (event) {
+    delete keysDown[event.keyCode];
+});

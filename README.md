@@ -31,7 +31,7 @@ _This will take a number as an input and then count up to that number from 1 rep
 * _Draw a ball_
 * _Draw the paddles_
 * _Move the Ball_
-* _Reflect te ball off of edge of canvas_
+* _Reflect the ball off of edge of canvas_
 * _Capture key press to move paddles_
 * _Ball respwans in middle if it touches the sides with paddles_
 * _Ball reflects off of paddles_
