@@ -1,7 +1,17 @@
 var pingPong = function(number) {
   var result = [];
-  for(count = 1; count <= number; count ++) {
-    if (count % 3 === 0){
+  var count = 0;
+  var countingNumber = 1;
+  if (number >= 1 ) {
+    countingNumber = 1, count = 0;
+  } else {
+    countingNumber = -1, count = 2;
+  }
+  while (count != number) {
+    count += countingNumber;
+    if (count % 15 === 0) {
+      result.push("pingpong");
+    } else if (count % 3 === 0){
       result.push("ping");
     } else if (count % 5 === 0) {
       result.push("pong");
